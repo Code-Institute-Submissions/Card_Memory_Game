@@ -1,17 +1,50 @@
 <!DOCTYPE html>
 <html lang="en-US">
 
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/styles.css" type="text/css" />
-    <title>Card Memory Game</title>
-</head>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/css/styles.css" type="text/css" />
+        <title>Card Memory Game</title>
+    </head>
 
-<body>
-    
-    <script type="text/javascript" src="assets/js/jquery-3.5.1.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="assets/js/scripts.js"></script>
-</body>
+    <body>
+        <!---Pop-Up Welcoming Message-->
+        <div id="welcome-msg">
+            <h4>Welcome to Endangered Species Memory Game</h4>
+            <p>This project is aimed at people of any age or religious belief. Because we all have to unite to save those who 
+            are most vulnerable to the descrtuctive nature of the mankind. Thousands of species are in brink of extinction 
+            because of our exploits. Think a bit more of what surrounds us and enjoy the game.</p>
+            <h5>How to Play:</h5>
+            <p>The rules are quite simple. You need to match all the cards with their pair. And try to do in the least
+            amount of turns possible. The best players will be shown on the leaderboards.</p>
+            <p>Here you can enter your name, please note that it will be used for leaderboards and you won't be able to change it later.</p>
+            <input id="username" type="text" />
+            <button id="welcome-btn">Start The Game!</button>
+        </div>
+
+        <!---Content above the game-->
+        <header>
+            <div id="username-holder"></div>
+            <div id="turns-counter"></div>
+            <button id="reset">Reset!</button>
+            <div id="timer"></div>
+            <button id="leaderboards"></button>
+        </header>
+
+        <!---Game content-->
+        <content>
+            <p>There will be cards</p>
+        </content>
+
+        <!---Social media links and copyrights-->
+        <footer>
+        </footer>
+
+        <!---Scripts-->
+        <script type="text/javascript" src="assets/js/jquery-3.5.1.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="assets/js/scripts.js"></script>
+    </body>
+</html>
