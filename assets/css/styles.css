@@ -11,7 +11,7 @@
 
 .game-info-container {
     background-color: rgb(255, 150, 10);
-    width: 100%;
+    width: 100%
 }
 
 .info-hold {
@@ -20,7 +20,44 @@
     padding: 5px 0 5px 0;
 }
 
+
+/*------------Cards styles and animation----------------*/
+
+.game-container {
+    margin: 20px auto 20px auto;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 10px;
+    justify-content: center;
+}
+
+
+.card-flip {
+    perspective: 1000px;
+}
+
 .card {
-    height: 175px;
-    width: 125px;
+    height: 197px;
+    width: 140px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.front, .back {
+    height: 197px;
+    width: 140px;
+    position: absolute;
+    border-radius: 5px;
+    display: flex;
+    backface-visibility: hidden;
+}
+
+.front {
+    transform: rotateY(180deg)
+}
+
+.card-flip:hover .card {
+    transform: rotateY(180deg);
 }
