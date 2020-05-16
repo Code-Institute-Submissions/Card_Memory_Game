@@ -1,8 +1,26 @@
+
 #welcome-msg {
     text-align: center;
     border-radius: 35px;
-    background-color: rgba(255, 150, 10, 0.4);
+    background-color: rgba(255, 150, 10, 0.7);
     width: 450px;
     padding: 20px 30px 20px 30px;
-    margin: 0 auto;
+    position: absolute;
+    z-index: 1;
+}
+
+.game-info-container {
+    background-color: rgb(255, 150, 10);
+    width: 100%;
+}
+
+.info-hold {
+    display: inline-block;
+    width: 20%;
+    padding: 5px 0 5px 0;
+}
+
+.card {
+    height: 175px;
+    width: 125px;
 }
