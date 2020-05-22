@@ -40,6 +40,10 @@
     transform-style: preserve-3d;
 }
 
+.inactive {
+    pointer-events: none;
+}
+
 .front, .back {
     height: 197px;
     width: 140px;
@@ -51,3 +55,4 @@
 .open {
     /* Placeholder class for opened cards. */
 }
+
