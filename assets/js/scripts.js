@@ -1,6 +1,3 @@
-$("#welcome-btn").click(function() {
-    $("#welcome-msg").fadeOut(1000);
-});
 
 /* Wait for the page to load before executing code */
 window.onload = function() {
@@ -8,8 +5,14 @@ window.onload = function() {
     /* Set variables to be used through entire project */
     let flipsCount = 0;
     let openCards = [];
-    let lockGame = false;
+    let lockGame = true;
+    let turnsCounter = 0;
 
+    /* Introduction message with game lock release */
+    $("#welcome-btn").click(function() {
+        $("#welcome-msg").fadeOut(1000);
+        lockGame = false;
+    });
 
     /* Code to be executed when a card is clicked on */
     $(".card").click(function() {
@@ -29,6 +32,9 @@ window.onload = function() {
             /* If two cards are flipped check pair, lock game and reset flipsCount */
             if (flipsCount === 2) {
                 lockGame = true;
+                turnsCounter++;
+                $("#turns").html(turnsCounter);
+                console.log(turnsCounter);
                 checkPair();
                 flipsCount = 0;
             };
@@ -47,7 +53,7 @@ window.onload = function() {
             $(".open").removeClass("open");
         } else {
             console.log("No match!");
-            setTimeout(flipBack, 2000);
+            setTimeout(flipBack, 1500);
         };
     };
 
