@@ -4,15 +4,18 @@ $("#welcome-btn").click(function() {
 
 /* Wait for the page to load before executing code */
 window.onload = function() {
+
+    /* Set variables to be used through entire project */
     let flipsCount = 0;
     let openCards = [];
-    let lockGame = 0;
+    let lockGame = false;
 
-    if (lockGame === 1) {}
 
     /* Code to be executed when a card is clicked on */
     $(".card").click(function() {
-        if (lockGame === 0) {
+
+        /* Checks if the game is locked */
+        if (lockGame === false) {
             flipsCount ++;
             let id = this.id.split(" ");
             openCards.push(id);
@@ -23,15 +26,15 @@ window.onload = function() {
             /* Adding a placeholder class to clicked card */
             $(this).addClass("open");
 
-            /* If two cards are flipped check pair and reset flipsCount */
+            /* If two cards are flipped check pair, lock game and reset flipsCount */
             if (flipsCount === 2) {
-                lockGame++;
+                lockGame = true;
                 checkPair();
                 flipsCount = 0;
             };
 
         } else {
-            
+            console.log("Waiting for gameLock release")
         }
     });
 
@@ -54,7 +57,7 @@ window.onload = function() {
         $(".open").css({"transform": "rotateY(-360deg)"});
         $(".open").find(".back").fadeIn(750);
         $(".open").removeClass("open");
-        lockGame--;
+        lockGame = false;
         openCards = [];
     };
 };
