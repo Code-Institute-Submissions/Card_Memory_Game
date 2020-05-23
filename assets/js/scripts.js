@@ -11,8 +11,29 @@ window.onload = function() {
     $("#welcome-btn").click(function() {
         $("#welcome-msg").fadeOut(1000);
         lockGame = false;
+        shuffleCards();
     });
 
+
+    /* Resets the game when a Reset button is clicked */
+    $("#reset").click(function() {
+        /* Reset turns counter and other variables */
+        turnsCounter = 0;
+        $("#turns").html(turnsCounter);
+        flipsCount = 0;
+        openCards = [];
+        lockGame = true;
+        /* Reset all cards status and flip them back */
+        $(".card").removeClass("inactive");
+        $(".card").removeClass("open");
+        $(".card").find(".back").fadeIn(0);
+        /* Shuffle cards function */
+        shuffleCards();
+        lockGame = false;
+    });
+
+
+    
     /* Code to be executed when a card is clicked on */
     $(".card").click(function() {
 
@@ -45,7 +66,7 @@ window.onload = function() {
 
         } else {
             console.log("Waiting for gameLock release")
-        }
+        };
     });
 
 
@@ -59,7 +80,7 @@ window.onload = function() {
             openCards = [];
         } else {
             console.log("No match!");
-            setTimeout(flipBack, 1500);
+            setTimeout(flipBack, 1000);
         };
     };
 
@@ -75,5 +96,17 @@ window.onload = function() {
         /* Remove game lock and nulify openCards array */
         lockGame = false;
         openCards = [];
+    };
+
+    /* This function shuffles the cards */
+    function shuffleCards() {
+        for(i = 0; i < 16; i++ ) {
+            /* Declare randomizer equation and an array from cards list */
+            let cards = Array.from(document.getElementsByClassName("card"));
+            let randomize = Math.floor(Math.random() * (i+1));
+            /* Select a random card and randomize it's order style */
+            cards[randomize].style.order = i;
+            cards[i].style.order = randomize;
+        };
     };
 };
