@@ -7,7 +7,9 @@ window.onload = function() {
     let lockGame = true;
     let turnsCounter = 0;
     let userName = "";
+    let matchedCards = 0;
 
+    /* Retrieves username from Local Storage and applies it to the holding container */
     userName = localStorage.getItem("userNameStorage");
     $("#username-holder").html(userName);
 
@@ -18,21 +20,23 @@ window.onload = function() {
         shuffleCards();
     });
 
+    /* Retrieves user's input and sets it as a name */
     $("#set-name").click(function() {
         userName = $("#username").val();
         localStorage.setItem("userNameStorage", userName);
         $("#username-holder").html(userName);
     })
 
-
     /* Resets the game when a Reset button is clicked */
-    $("#reset").click(function() {
+    $(".reset").click(function() {
         /* Reset turns counter and other variables */
         turnsCounter = 0;
         $("#turns").html(turnsCounter);
         flipsCount = 0;
         openCards = [];
         lockGame = true;
+        /* Makes sure the victory msg is hidden in case user already won */
+        $("#victory-msg").hide();
         /* Reset all cards status and flip them back */
         $(".card").removeClass("inactive");
         $(".card").removeClass("open");
@@ -68,18 +72,17 @@ window.onload = function() {
                 /* Reset flipsCount and lock the game */
                 flipsCount = 0;
                 lockGame = true;
-                /* check if cards match */
-                checkPair();
                 /* Increase the turns counter and output it to the #turns div */
                 turnsCounter++;
                 $("#turns").html(turnsCounter);
+                /* check if cards match */
+                checkPair();
             };
 
         } else {
             console.log("Waiting for gameLock release")
         };
     });
-
 
     /* Function to check if open cards match */
     function checkPair() {
@@ -89,6 +92,13 @@ window.onload = function() {
             /* Remove game lock and reset openCards array */
             lockGame = false;
             openCards = [];
+            matchedCards++;
+            /* If all cards are matched show the victory-msg */
+            if (matchedCards === 8) {
+                console.log("Game won!")
+                $("#victory-msg").show();
+                $("#turnsMade").html(turnsCounter)
+            }
         } else {
             console.log("No match!");
             setTimeout(flipBack, 1000);
