@@ -1,39 +1,71 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+#Endangered Species Card Game
 
-Welcome RastaYoda,
+This is a card matching game which uses images of indangered animal species. The main purpose is to raise 
+some awareness of poor creatures which are on a brink of extinction because of the human race. I've implemented
+the flipping animation for prettier look during the gameplay.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project.
+##UX Design
 
-## Gitpod Reminders
+-As a user I want a memory game where I have to match identical cards*
+-That's exactly what this project does!*
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+-Whenever I click on card, I expect it to flip and show the front image*
+-By using CSS and JavaScript I implemented that as a feature*
 
-`python3 -m http.server`
+-When I click on two matching cards, the both stay flipped*
+-Both cards will remain flipped because of added Inactive CSS class*
 
-A blue button should appear to click: *Make Public*,
+-If cards don't match, both of them should flip back*
+-That's exactly what happens and it's achieved by removing and adding some classes to the chosen cards*
 
-Another blue button should appear to click: *Open Browser*.
+-I shouldn't be able to click on the same card twice*
+-Whenever you click on card, the script will remove any interactivity from it*
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+-When I enter the user name, I expect it to be shown somewhere within the webpage*
+-The user name you input will be shown on the top-left corner. It'll be saved to your local storage and can be changed at any time!*
 
-A blue button should appear to click: *Make Public*,
+-The turns counter should increase every time I flip two cards*
+-Whenever you flip two cards the JavaScript will increment the turns counter and push the value into HTML page*
 
-Another blue button should appear to click: *Open Browser*.
+-If all cards are matched I expect a message notifying me of my victory*
+-When all cards are matched, the message pops-up congratulating the user and offering to restart the game*
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the backend lessons.
+##Features
 
-## Updates Since The Instructional Video
+-User can fill out a text field before starting game to use it as a User Name. Which will be displayed on top-left corner*
+-The user name is stored in Local Storage and retrieved every time the user visits the page*
+-When the user clicks on card, it flips and reveals the front image*
+-When two cards are flipped they'll be compared to each other, if they don't match flip them back. If they do then keep them open*
+-Every time the user clicks on two cards to compare them. The turns counter will increase and display it on the bar on top of the page*
+-If all cards are matched, victory pop-up message will be shown. Which will display in how many turns user beated the game. Also an option to restart will be available*
+-A reset button which will randomize cards position, flip them back and reset all the counters*
 
-We continually tweak and adjust this template to help give you the best experience. Here are the updates since the original video was made:
+##Technologies Used
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+-JQuery is used to simplify DOM navigation and making interactions on the webpage easier to achieve*
+-BootStrap was used to align content easier. At the beggining of project I expected to use more of it, but at the end it's there just to be there*
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+##Testing
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+For testing I utilised Chrome Dev Tools which prooved to be an invaluable asset at finding out what's wrong with code.
+By using the console.log() command to keep track of all the variables and their condition within the Console tab of Dev Tools
+Also by using the same tools, I'd select an HTML element which doesn't display as I would expect it to. Then check all 
+the rules to see which one alters the view of the page. Along with that I'd create new temporary styles to see which
+one of them would achieve the result I expect.
+Also with those tools I'd change the screen size and pick the smartphone/tablet resolutions to check how the site
+displays on the mobile devices. Also to ensure that the quality of the webpage is consistent across all platforms
+I checked the page on my phone Galaxy S5, my friends HTC Honor, IPad and some other devices provided to me by my frineds.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+##Deployment
 
---------
+To deploy the page I simply pushed all of the repository data to GitHub. Navigated to the repository name and then to the
+settings tab. In the settings tab I scrolled down to the GitHub Pages section, and there via few simple clicks
+I published the page.
 
-Happy coding!
+##Credits
+
+I'd like to give credit and thank the guys on https://whyfiles.org/202critter_cards/ for making the cards which I utilised 
+within this project. Go check them out, they have a bunch of interesting pages made!
+Also I express my gratitude to my mother and my cat for moral support and kick in the ass for boosted work! :D
+
+
