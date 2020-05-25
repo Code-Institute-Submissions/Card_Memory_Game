@@ -20,18 +20,18 @@
             amount of turns possible. The best players will be shown on the leaderboards.</p>
             <p>Here you can enter your name, please note that it will be used for leaderboards and you won't be able to change it later.</p>
             <input id="username" type="text" />
-            <button id="set-name">Set Name</button>
-            <button id="welcome-btn" style="margin-top: 10px;">Start The Game!</button>
+            <button id="set-name" class="btn-primary">Set Name</button>
+            <button id="welcome-btn" class="btn-primary" style="margin-top: 10px;">Start The Game!</button>
         </div>
 
         <!---Content above the game-->
         <header class="game-info-container container-fluid">
                 <div class="row">
                 <div class="info-hold col-4">
-                    Welcome <span id="username-holder"></span>, please enjoy the game!
+                    Welcome <span id="username-holder"></span>
                 </div>
                 <div class="info-hold col-4">
-                    <button class="reset">Reset!</button>
+                    <button class="reset btn-primary">Reset!</button>
                 </div>
                 <div class="info-hold col-4">
                     Turns: <span id="turns">0</span>
@@ -111,7 +111,7 @@
             <h2>Congratulations!</h2>
             <p>You just completed the game in <span id="turnsMade"></span> turns!</p>
             <p>Would you like to play again and beat your record?</p>
-            <button class="reset">Try Again!</button>
+            <button class="reset btn-primary">Try Again!</button>
         </div>
     
 

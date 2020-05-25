@@ -1,8 +1,8 @@
-
+/*-----Pop-up Messages Style------*/
 .pop-msg {
     text-align: center;
     border-radius: 35px;
-    background-color: rgba(255, 150, 10, 0.9);
+    background-color: rgba(120, 46, 104, 0.8);
     padding: 20px 30px 20px 30px;
     position: absolute;
     z-index: 1;
@@ -10,15 +10,24 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    color: white;
 }
 
 #victory-msg {
     display: none;
 }
 
+.btn-primary {
+    border-radius: 10px;
+}
+
+
+/*-----Information container styles-------*/
+
 .game-info-container {
-    background-color: rgb(255, 150, 10);
-    width: 100%
+    background-color: rgba(120, 46, 104, 0.8);
+    width: 100%;
+    color: white;
 }
 
 .info-hold {
@@ -28,6 +37,12 @@
     padding: 5px 0 5px 0;
 }
 
+/*-------Site background-------*/
+
+body {
+    background-image: url("/assets/images/jungle-bg.jpg");
+    background-repeat: no-repeat;
+}
 
 /*------------Cards styles and animation----------------*/
 
@@ -48,10 +63,6 @@
     transform-style: preserve-3d;
 }
 
-.inactive {
-    pointer-events: none;
-}
-
 .front, .back {
     height: 197px;
     width: 140px;
@@ -60,7 +71,22 @@
     display: flex;
 }
 
+/*------Class for inactive cards--------*/
+.inactive {
+    pointer-events: none;
+}
+
 .open {
     /* Placeholder class for opened cards. */
 }
 
+@media (max-width: 675px) {
+    .card {
+        height: 157px;
+        width: 75px;
+    }
+    .card img {
+        height: 157px;
+        width: 75px;
+    }
+}
