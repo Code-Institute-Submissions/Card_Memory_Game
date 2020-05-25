@@ -2,7 +2,7 @@
 #welcome-msg {
     text-align: center;
     border-radius: 35px;
-    background-color: rgba(255, 150, 10, 0.7);
+    background-color: rgba(255, 150, 10, 0.9);
     width: 450px;
     padding: 20px 30px 20px 30px;
     position: absolute;
@@ -16,7 +16,8 @@
 
 .info-hold {
     display: inline-block;
-    width: 20%;
+    text-align: center;
+
     padding: 5px 0 5px 0;
 }
 

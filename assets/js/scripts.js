@@ -6,6 +6,10 @@ window.onload = function() {
     let openCards = [];
     let lockGame = true;
     let turnsCounter = 0;
+    let userName = "";
+
+    userName = localStorage.getItem("userNameStorage");
+    $("#username-holder").html(userName);
 
     /* Introduction message with game lock release */
     $("#welcome-btn").click(function() {
@@ -13,6 +17,12 @@ window.onload = function() {
         lockGame = false;
         shuffleCards();
     });
+
+    $("#set-name").click(function() {
+        userName = $("#username").val();
+        localStorage.setItem("userNameStorage", userName);
+        $("#username-holder").html(userName);
+    })
 
 
     /* Resets the game when a Reset button is clicked */
@@ -26,6 +36,7 @@ window.onload = function() {
         /* Reset all cards status and flip them back */
         $(".card").removeClass("inactive");
         $(".card").removeClass("open");
+        $(".card").css({"transform": "rotateY(360deg)"});
         $(".card").find(".back").fadeIn(0);
         /* Shuffle cards function */
         shuffleCards();
@@ -46,7 +57,7 @@ window.onload = function() {
             /* Remove interaction on clicked card */
             $(this).addClass("inactive");
             /* Flip animation on clicked card*/
-            $(this).css({"transform": "rotateY(360deg)"});
+            $(this).css({"transform": "rotateY(180deg)"});
             $(this).find(".back").fadeOut(750);
             /* Adding a placeholder class to clicked card */
             $(this).addClass("open");
@@ -88,7 +99,7 @@ window.onload = function() {
     function flipBack() {
         console.log("FlipBack function is being processed");
         /* Flip back animation */
-        $(".open").css({"transform": "rotateY(-360deg)"});
+        $(".open").css({"transform": "rotateY(-180deg)"});
         $(".open").find(".back").fadeIn(750);
         /* Remove placeholder class and add back interaction */
         $(".open").removeClass("inactive");
@@ -100,12 +111,12 @@ window.onload = function() {
 
     /* This function shuffles the cards */
     function shuffleCards() {
+        /* Create an array out of cards */
+        let cards = Array.from(document.getElementsByClassName("card"));
         for(i = 0; i < 16; i++ ) {
-            /* Declare randomizer equation and an array from cards list */
-            let cards = Array.from(document.getElementsByClassName("card"));
+            /*  create a random number */      
             let randomize = Math.floor(Math.random() * (i+1));
-            /* Select a random card and randomize it's order style */
-            cards[randomize].style.order = i;
+            /* Select a card and randomize it's order style */
             cards[i].style.order = randomize;
         };
     };
